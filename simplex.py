@@ -200,6 +200,7 @@ def simplex(LP):
 
     if table is None:
         print("The constraints can not be satisfied. No solution.")
+        return None, None
     else:
         ### reform to canonical form
         bases, _, _ = interpret(table)
@@ -211,11 +212,11 @@ def simplex(LP):
         
         solve(table)
 
-    _, solutions, f = interpret(table)
-    print("The solution is ", solutions)
-    print("The optimal is ", f)
+        _, solutions, f = interpret(table)
+        print("The solution is ", solutions)
+        print("The optimal is ", f)
 
-    return solutions, f
+        return solutions, f
 
 
 
